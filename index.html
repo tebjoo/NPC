@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Pacific Construction & Remodeling</title>
+    <style>
+        /* CSS for Styling */
+        :root {
+            /* Define color variables for easy changes */
+            --primary-blue: #007bff; /* A bright, construction-friendly blue */
+            --secondary-blue: #00bcd4; /* A lighter, teal-like blue from the van */
+            --dark-grey: #333;
+            --light-grey: #f4f4f4;
+            --white: #ffffff;
+            --font-family: 'Arial', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-grey);
+            background-color: var(--white);
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header/Navigation */
+        header {
+            background: var(--dark-grey);
+            color: var(--white);
+            padding-top: 20px;
+            min-height: 70px;
+            border-bottom: 3px solid var(--secondary-blue);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header .logo span {
+            color: var(--secondary-blue);
+            margin: 0 5px;
+            /* Placeholder for the palm tree visual */
+        }
+        
+        header p {
+            font-size: 1.1em;
+            color: var(--light-grey);
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 15px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 0 15px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-blue);
+        }
+
+        /* Hero Section */
+        #hero {
+            background: url('https://picsum.photos/id/229/2000') no-repeat center center/cover; 
+            color: var(--white);
+            padding: 100px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-blue);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: 2px solid var(--secondary-blue);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            border-bottom: 3px solid var(--light-grey);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .section-content {
+            padding: 20px 0;
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--light-grey);
+        }
+
+        .service-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .service-item {
+            background: var(--white);
+            padding: 20px;
+            margin: 15px;
+            flex-basis: 30%; /* Three items per row */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-item h3 {
+            color: var(--secondary-blue);
+            margin-bottom: 10px;
+        }
+
+        /* Contact/About Section */
+        #contact {
+            background: var(--white);
+            padding-bottom: 80px;
+        }
+
+        #contact .info-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            flex-basis: 45%;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .info-box h3 {
+            color: var(--dark-grey);
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-grey);
+            color: var(--light-grey);
+            padding: 20px 0;
+            border-top: 3px solid var(--secondary-blue);
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .ccb {
+            font-style: italic;
+            color: var(--secondary-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            header .logo {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            #hero h1 {
+                font-size: 2.5em;
+            }
+
+            .service-item, .info-box {
+                flex-basis: 100%;
+            }
+        }
+
+        /* Simple Animation for the Call Button */
+        .call-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #28a745; /* A standard 'call to action' green */
+            color: var(--white);
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 1.2em;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-decoration: none;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="tel:5036501300" class="call-button" aria-label="Call Now">
+        📞 (503) 650-1300
+    </a>
+
+    <header>
+        <div class="container text-center">
+            <div class="logo">
+                <span style="font-size: 0.6em;">🌴</span>
+                NORTH PACIFIC
+                <span style="font-size: 0.6em;">🌴</span>
+            </div>
+            <p style="font-size: 1.5em; color: #ccc; margin-top: -10px;">CONSTRUCTION & REMODELING</p>
+
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="text-center">
+        <div class="container">
+            <h1>Your Trusted Partners in Building & Design</h1>
+            <p>Quality Craftsmanship. Unwavering Dedication. Serving the Pacific Northwest.</p>
+            <a href="#contact" class="cta-button">Get a Free Estimate Today!</a>
+        </div>
+    </section>
+
+    <section id="about" class="text-center">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="section-content">
+                <p><strong>North Pacific Construction & Remodeling</strong> is a locally owned and operated company dedicated to providing high-quality construction and remodeling services throughout **Oregon and Washington**. We take pride in our detail-oriented approach and commitment to customer satisfaction, ensuring every project, big or small, meets our rigorous standards of excellence.</p>
+                <p>From initial design to final walkthrough, we partner with you to bring your vision for your home or business to life. Licensed, bonded, and insured for your peace of mind.</p>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section id="services" class="text-center">
+        <div class="container">
+            <h2>Our Expertise</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Home Remodeling</h3>
+                    <p>Complete kitchen and bathroom renovations, basement finishing, whole-house remodels, and structural improvements.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Additions & Extensions</h3>
+                    <p>Expanding your living space with seamless room additions, second-story expansions, and custom detached buildings.</p>
+                </div>
+                <div class="service-item">
+                    <h3>New Construction</h3>
+                    <p>Ground-up construction for custom homes and commercial properties, built to the highest quality standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section id="contact" class="text-center">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="info-grid">
+                <div class="info-box contact-details">
+                    <h3>Contact Information</h3>
+                    <p><strong>Phone:</strong> <a href="tel:5036501300" style="color: var(--primary-blue); text-decoration: none;">(503) 650-1300</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@northpacificcr.com" style="color: var(--primary-blue); text-decoration: none;">info@northpacificcr.com</a> (Placeholder)</p>
+                    <p><strong>Service Areas:</strong> Portland Metro, Vancouver, and surrounding Pacific Northwest regions.</p>
+                </div>
+                
+                <div class="info-box">
+                    <h3>Request a Quote</h3>
+                    <p>Use the form below (or call us!) to tell us about your project. We'll be in touch soon to schedule a consultation.</p>
+                    
+                    <form action="#" method="POST" style="text-align: left;">
+                        <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px;">
+                        <input type="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px;">
+                        <textarea placeholder="Tell us about your project..." rows="4" required style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                        <button type="submit" class="cta-button" style="width: 100%;">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 North Pacific Construction & Remodeling. All rights reserved.</p>
+            <p class="ccb">OR CCB# 68811 | WA CCB# NORTHPC91K3</p>
+            <p>Design by AI Assistant 🤖</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
